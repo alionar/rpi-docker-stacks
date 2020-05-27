@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  jupyter:
+    image: rpi666/rpi-jupyter
+    container_name: jupyter
+    restart: always
+    expose:
+     - 8888
+    volumes:
+     - /home/pi/.config/jupyter/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
+     - /home/pi/Documents/dev/jupyterlab:/root/notebooks
+
+networks:
+  default:
+    external:
+      name: webproxy

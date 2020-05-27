@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+    image: rpi666/rpi-selenium-standalone-firefox
+    container_name: selenium_firefox
+    restart: always
+    expose:
+      - 4444
+    shm_size: 2G
+
