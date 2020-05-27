@@ -11,7 +11,3 @@ services:
       - 443:443
     restart: unless-stopped
 
-networks:
-  default:
-    external:
-      name: webproxy
