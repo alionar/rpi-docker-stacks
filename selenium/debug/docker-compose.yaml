@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  selenium-firefox-debug:
+    image: rpi666/rpi-selenium-standalone-firefox-debug
+    container_name: selenium_firefox_debug
+    restart: always
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - 4445:4444
+      - 5901:5900
+    shm_size: 2G
