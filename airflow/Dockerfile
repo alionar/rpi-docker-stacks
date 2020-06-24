@@ -55,6 +55,7 @@ RUN set -ex \
         locales \
         libmariadb-dev-compat libmariadb-dev\
         software-properties-common \
+        libpq5 \
     && sed -i 's/^# en_US.UTF-8 UTF-8$/en_US.UTF-8 UTF-8/g' /etc/locale.gen \
     && locale-gen \
     && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
