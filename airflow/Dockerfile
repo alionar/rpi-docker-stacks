@@ -26,8 +26,7 @@ ENV LC_CTYPE en_US.UTF-8
 ENV LC_MESSAGES en_US.UTF-8
 
 # Setup pip from piwheels
-COPY pip.conf /etc/pip.conf
-
+COPY ./config/pip.conf /etc/pip.conf
 
 # Disable noisy "Handling signal" log messages:
 # ENV GUNICORN_CMD_ARGS --log-level WARNING
