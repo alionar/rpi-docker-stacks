@@ -4,6 +4,8 @@
 
 FROM balenalib/raspberry-pi-python:3.7-20200518
 
+ENV NODE_OPTIONS=--max-old-space-size=2048
+
 WORKDIR /root
 
 # Update pip and install jupyter
