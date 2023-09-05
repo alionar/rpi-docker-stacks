@@ -2,11 +2,26 @@ version: '2'
 
 services:
   jupyter:
-    image: rpi666/rpi-jupyter
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JUPYTER_DOCKER_IMAGE: jupyter/base-notebook
+        JUPYTER_DOCKER_IMAGE_VERSION: python-3.11
+    #image: jupyter/minimal-notebook:latest
     container_name: jupyter
-    restart: always
+    hostname: jupyterlab
+    restart: unless-stopped
     expose:
-     - 8888
+      - 8888
     volumes:
-     - /home/pi/.config/jupyter/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
-     - /home/pi/Documents/dev/jupyterlab:/root/notebooks
+      - $HOME/Documents/dev/jupyterlab:/home/jovyan
+      #- ~/.config/jupyter/jupyter_notebook_config.py:/srv/jupyterhub/jupyterhub_config.py:ro
+      #- ~/.config/jupyter/jupyter_server_config.py:/home/jovyan/.jupyter/jupyter_server_config.py
+    environment:
+      - GRANT_SUDO=yes
+
+networks:
+  default:
+    external: true
+    name: webproxy

@@ -1,0 +1,13 @@
+ipywidgets
+julynter
+jupyterlab_autoscrollcelloutput
+jupyterlab-cell-flash
+jupyterlab_execute_time
+jupyterlab-horizon-theme
+jupyterlab-night
+jupyterlab-skip-traceback
+jupyterlab-spreadsheet-editor
+#jupyterlab-unfold
+jupyterlab-visualpython
+jupyterlab-lsp
+python-lsp-server[all]
